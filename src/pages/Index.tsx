@@ -25,6 +25,8 @@ import {
   TrendingUp
 } from 'lucide-react';
 import heroImage from '@/assets/hero-image.jpg';
+import { Background3D } from '@/components/Background3D';
+import { ChatWidget } from '@/components/ChatWidget';
 
 const Index = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -114,28 +116,28 @@ const Index = () => {
 
   const testimonials = [
     {
-      name: "Sarah Chen",
-      role: "Head of Customer Success",
-      company: "TechFlow Inc",
+      name: "Dr. Sarah Chen",
+      role: "Chief Information Officer",
+      company: "Mayo Clinic",
       avatar: "SC",
       rating: 5,
-      quote: "SanTra reduced our response time by 70% and our customers love the instant, accurate responses. It's like having our best support agent available 24/7."
+      quote: "SanTra reduced our patient inquiry response time by 70% and our patients love the instant, accurate responses. It's like having our best support specialist available 24/7."
     },
     {
       name: "Marcus Rodriguez",
-      role: "VP of Operations", 
-      company: "GrowthLabs",
+      role: "VP of Patient Experience", 
+      company: "Johns Hopkins Hospital",
       avatar: "MR",
       rating: 5,
-      quote: "The seamless handoff between AI and human agents is incredible. Our team can focus on complex issues while AI handles routine queries perfectly."
+      quote: "The seamless handoff between AI and human staff is incredible. Our team can focus on complex medical inquiries while AI handles routine appointment scheduling perfectly."
     },
     {
-      name: "Emma Thompson",
-      role: "Customer Experience Director",
-      company: "InnovateCorp",
+      name: "Dr. Emma Thompson",
+      role: "Director of Digital Health",
+      company: "Cleveland Clinic",
       avatar: "ET", 
       rating: 5,
-      quote: "Implementation was smooth and the white-label capabilities mean it feels like our own product. Customer satisfaction scores have never been higher."
+      quote: "Implementation was smooth and the white-label capabilities mean it feels like our own patient portal. Patient satisfaction scores have never been higher."
     }
   ];
 
@@ -233,12 +235,19 @@ const Index = () => {
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <div className="flex items-center space-x-2">
+            <a 
+              href="#hero" 
+              className="flex items-center space-x-2 cursor-pointer hover:opacity-80 transition-opacity"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById('hero')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+            >
               <div className="bg-gradient-primary w-8 h-8 rounded-lg flex items-center justify-center">
                 <MessageSquare className="h-5 w-5 text-white" />
               </div>
               <span className="text-xl font-bold gradient-text-primary">SanTra</span>
-            </div>
+            </a>
             
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
@@ -279,8 +288,11 @@ const Index = () => {
         )}
       </nav>
 
+      {/* 3D Background */}
+      <Background3D />
+
       {/* Hero Section */}
-      <section className="relative pt-24 pb-12 sm:pt-32 sm:pb-16 lg:pt-40 lg:pb-20">
+      <section id="hero" className="relative pt-24 pb-12 sm:pt-32 sm:pb-16 lg:pt-40 lg:pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="lg:grid lg:grid-cols-12 lg:gap-8 items-center">
             <div className="sm:text-center lg:text-left lg:col-span-6">
@@ -340,12 +352,19 @@ const Index = () => {
       {/* Logo Cloud */}
       <section className="py-12 bg-white/5 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-center text-foreground-secondary mb-8">Trusted by 500+ forward-thinking companies</p>
+          <p className="text-center text-foreground-secondary mb-8">Trusted by 500+ leading healthcare institutions</p>
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center">
-            {['Company A', 'Company B', 'Company C', 'Company D', 'Company E', 'Company F'].map((company, idx) => (
+            {[
+              'Mayo Clinic', 
+              'Johns Hopkins', 
+              'Cleveland Clinic', 
+              'Mass General', 
+              'Kaiser Permanente',
+              'Mount Sinai'
+            ].map((hospital, idx) => (
               <div key={idx} className="text-center">
-                <div className="bg-gradient-to-r from-primary/20 to-secondary/20 w-24 h-12 mx-auto rounded-lg flex items-center justify-center hover:opacity-80 transition-opacity">
-                  <span className="text-sm font-semibold text-foreground-secondary">{company}</span>
+                <div className="bg-gradient-to-r from-primary/20 to-secondary/20 w-28 h-12 mx-auto rounded-lg flex items-center justify-center hover:opacity-80 transition-opacity cursor-pointer hover-lift">
+                  <span className="text-xs font-semibold text-foreground-secondary">{hospital}</span>
                 </div>
               </div>
             ))}
@@ -665,6 +684,9 @@ const Index = () => {
           </div>
         </div>
       </footer>
+
+      {/* Chat Widget */}
+      <ChatWidget />
     </div>
   );
 };
