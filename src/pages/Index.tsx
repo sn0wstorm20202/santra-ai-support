@@ -50,6 +50,9 @@ const Index = () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setVisibleSections(prev => new Set([...prev, entry.target.id]));
+            // Add visible class to all fade-in-up elements within this section
+            const fadeElements = entry.target.querySelectorAll('.fade-in-up');
+            fadeElements.forEach((el) => el.classList.add('visible'));
           }
         });
       },
