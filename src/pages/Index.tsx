@@ -4,18 +4,18 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Badge } from '@/components/ui/badge';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Input } from '@/components/ui/input';
-import { 
-  Play, 
-  MessageSquare, 
-  Zap, 
-  BarChart3, 
-  Mic, 
-  Shield, 
-  Users, 
-  ArrowRight, 
-  Star, 
-  Check, 
-  Menu, 
+import {
+  Play,
+  MessageSquare,
+  Zap,
+  BarChart3,
+  Mic,
+  Shield,
+  Users,
+  ArrowRight,
+  Star,
+  Check,
+  Menu,
   X,
   Bot,
   Clock,
@@ -106,7 +106,7 @@ const Index = () => {
       description: "Upload your documentation, FAQs, and product information to create a comprehensive knowledge foundation."
     },
     {
-      number: "02", 
+      number: "02",
       title: "AI Learns Your Product",
       description: "Our advanced AI processes and understands your content, ready to provide accurate, context-aware responses."
     },
@@ -128,7 +128,7 @@ const Index = () => {
     },
     {
       name: "Marcus Rodriguez",
-      role: "VP of Patient Experience", 
+      role: "VP of Patient Experience",
       company: "Johns Hopkins Hospital",
       avatar: "MR",
       rating: 5,
@@ -138,7 +138,7 @@ const Index = () => {
       name: "Dr. Emma Thompson",
       role: "Director of Digital Health",
       company: "Cleveland Clinic",
-      avatar: "ET", 
+      avatar: "ET",
       rating: 5,
       quote: "Implementation was smooth and the white-label capabilities mean it feels like our own patient portal. Patient satisfaction scores have never been higher."
     }
@@ -190,7 +190,7 @@ const Index = () => {
       ]
     },
     {
-      name: "Growth", 
+      name: "Growth",
       price: "$49",
       period: "/month",
       description: "Ideal for growing businesses",
@@ -198,7 +198,7 @@ const Index = () => {
       features: [
         "AI-powered responses",
         "Up to 5 team members",
-        "Voice agent support", 
+        "Voice agent support",
         "Advanced analytics",
         "Priority support",
         "Custom integrations",
@@ -233,13 +233,12 @@ const Index = () => {
       </div>
 
       {/* Navigation */}
-      <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        isScrolled ? 'glass-navbar shadow-lg' : 'bg-transparent'
-      }`}>
+      <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'glass-navbar shadow-lg' : 'bg-transparent'
+        }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <a 
-              href="#hero" 
+            <a
+              href="#hero"
               className="flex items-center space-x-2 cursor-pointer hover:opacity-80 transition-opacity"
               onClick={(e) => {
                 e.preventDefault();
@@ -251,21 +250,23 @@ const Index = () => {
               </div>
               <span className="text-xl font-bold gradient-text-primary">SanTra</span>
             </a>
-            
+
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
               <a href="#features" className="text-foreground-secondary hover:text-foreground transition-colors">Features</a>
               <a href="#how-it-works" className="text-foreground-secondary hover:text-foreground transition-colors">How it Works</a>
               <a href="#pricing" className="text-foreground-secondary hover:text-foreground transition-colors">Pricing</a>
               <a href="#testimonials" className="text-foreground-secondary hover:text-foreground transition-colors">Testimonials</a>
-              <Button variant="outline" size="sm">Sign In</Button>
-              <Button className="bg-gradient-primary hover:opacity-90 text-white" size="sm">
-                Start Free Trial
+              <Button variant="outline" size="sm" asChild>
+                <a href="https://san-tra-ai-widget.vercel.app/" target="_blank" rel="noopener noreferrer">Sign In</a>
+              </Button>
+              <Button className="bg-gradient-primary hover:opacity-90 text-white" size="sm" asChild>
+                <a href="https://san-tra-ai-widget.vercel.app/" target="_blank" rel="noopener noreferrer">Start Free Trial</a>
               </Button>
             </div>
 
             {/* Mobile Menu Button */}
-            <button 
+            <button
               className="md:hidden"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
@@ -283,8 +284,12 @@ const Index = () => {
               <a href="#pricing" className="block text-foreground-secondary">Pricing</a>
               <a href="#testimonials" className="block text-foreground-secondary">Testimonials</a>
               <div className="pt-3 space-y-2">
-                <Button variant="outline" className="w-full">Sign In</Button>
-                <Button className="w-full bg-gradient-primary text-white">Start Free Trial</Button>
+                <Button variant="outline" className="w-full" asChild>
+                  <a href="https://san-tra-ai-widget.vercel.app/" target="_blank" rel="noopener noreferrer">Sign In</a>
+                </Button>
+                <Button className="w-full bg-gradient-primary text-white" asChild>
+                  <a href="https://san-tra-ai-widget.vercel.app/" target="_blank" rel="noopener noreferrer">Start Free Trial</a>
+                </Button>
               </div>
             </div>
           </div>
@@ -305,12 +310,12 @@ const Index = () => {
                 That Never Sleeps
               </h1>
               <p className="mt-6 text-lg sm:text-xl text-foreground-secondary max-w-3xl">
-                Transform your customer support with intelligent AI agents that provide instant, accurate responses 24/7. 
+                Transform your customer support with intelligent AI agents that provide instant, accurate responses 24/7.
                 Seamlessly escalate complex issues to human agents when needed.
               </p>
-              
+
               <div className="mt-8 flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-gradient-primary hover:opacity-90 text-white animate-pulse-glow">
+                <Button href="#https://san-tra-ai-widget.vercel.app/" size="lg" className="bg-gradient-primary hover:opacity-90 text-white animate-pulse-glow">
                   Start Free Trial
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
@@ -339,13 +344,13 @@ const Index = () => {
 
             <div className="mt-12 lg:mt-0 lg:col-span-6">
               <div className="relative">
-                <img 
-                  src={heroImage} 
-                  alt="SanTra AI-powered customer support interface" 
+                <img
+                  src={heroImage}
+                  alt="SanTra AI-powered customer support interface"
                   className="w-full h-auto rounded-2xl shadow-2xl hover-lift"
                 />
                 <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-secondary rounded-full opacity-20 animate-bounce-subtle"></div>
-                <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-gradient-accent rounded-full opacity-30 animate-bounce-subtle" style={{animationDelay: '1s'}}></div>
+                <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-gradient-accent rounded-full opacity-30 animate-bounce-subtle" style={{ animationDelay: '1s' }}></div>
               </div>
             </div>
           </div>
@@ -358,10 +363,10 @@ const Index = () => {
           <p className="text-center text-foreground-secondary mb-8">Trusted by 500+ leading healthcare institutions</p>
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center">
             {[
-              'Mayo Clinic', 
-              'Johns Hopkins', 
-              'Cleveland Clinic', 
-              'Mass General', 
+              'Mayo Clinic',
+              'Johns Hopkins',
+              'Cleveland Clinic',
+              'Mass General',
               'Kaiser Permanente',
               'Mount Sinai'
             ].map((hospital, idx) => (
@@ -512,11 +517,10 @@ const Index = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8" data-animate id="pricing-grid">
             {pricingPlans.map((plan, idx) => (
-              <Card key={idx} className={`hover-lift relative fade-in-up stagger-${idx + 1} ${
-                plan.popular 
-                  ? 'border-2 border-primary shadow-gradient glass' 
-                  : 'glass border-white/20'
-              }`}>
+              <Card key={idx} className={`hover-lift relative fade-in-up stagger-${idx + 1} ${plan.popular
+                ? 'border-2 border-primary shadow-gradient glass'
+                : 'glass border-white/20'
+                }`}>
                 {plan.popular && (
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                     <Badge className="bg-gradient-primary text-white">Most Popular</Badge>
@@ -543,12 +547,11 @@ const Index = () => {
                   </ul>
                 </CardContent>
                 <CardFooter>
-                  <Button 
-                    className={`w-full ${
-                      plan.popular 
-                        ? 'bg-gradient-primary text-white hover:opacity-90' 
-                        : 'variant-outline'
-                    }`}
+                  <Button
+                    className={`w-full ${plan.popular
+                      ? 'bg-gradient-primary text-white hover:opacity-90'
+                      : 'variant-outline'
+                      }`}
                   >
                     {plan.price === 'Free' ? 'Get Started' : plan.price === 'Custom' ? 'Contact Sales' : 'Start Free Trial'}
                   </Button>
@@ -598,18 +601,18 @@ const Index = () => {
             <p className="text-xl text-white/90 mb-8 fade-in-up stagger-1">
               Join thousands of companies providing better support with AI. Start your free trial today.
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6 fade-in-up stagger-2">
-              <Input 
-                type="email" 
-                placeholder="Enter your email address" 
+              <Input
+                type="email"
+                placeholder="Enter your email address"
                 className="max-w-md bg-white/10 border-white/20 text-white placeholder:text-white/70"
               />
               <Button size="lg" className="bg-white text-primary hover:bg-white/90">
                 Start Free Trial
               </Button>
             </div>
-            
+
             <p className="text-white/70 text-sm fade-in-up stagger-3">
               No credit card required • 14-day free trial • Cancel anytime
             </p>
@@ -618,8 +621,8 @@ const Index = () => {
 
         {/* Floating shapes */}
         <div className="absolute top-10 left-10 w-20 h-20 bg-white/10 rounded-full animate-bounce-subtle"></div>
-        <div className="absolute bottom-10 right-10 w-16 h-16 bg-white/5 rounded-full animate-bounce-subtle" style={{animationDelay: '2s'}}></div>
-        <div className="absolute top-1/2 left-20 w-12 h-12 bg-white/5 rounded-full animate-bounce-subtle" style={{animationDelay: '1s'}}></div>
+        <div className="absolute bottom-10 right-10 w-16 h-16 bg-white/5 rounded-full animate-bounce-subtle" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-1/2 left-20 w-12 h-12 bg-white/5 rounded-full animate-bounce-subtle" style={{ animationDelay: '1s' }}></div>
       </section>
 
       {/* Footer */}
