@@ -315,10 +315,12 @@ const Index = () => {
               </p>
 
               <div className="mt-8 flex flex-col sm:flex-row gap-4">
-                <Button href="#https://san-tra-ai-widget.vercel.app/" size="lg" className="bg-gradient-primary hover:opacity-90 text-white animate-pulse-glow">
-                  Start Free Trial
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
+                <a href="https://san-tra-ai-widget.vercel.app/" target="_blank" rel="noopener noreferrer">
+                  <Button size="lg" className="bg-gradient-primary hover:opacity-90 text-white animate-pulse-glow">
+                    Start Free Trial
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Button>
+                </a>
                 <Button size="lg" variant="outline" className="hover-lift">
                   <Play className="mr-2 h-5 w-5" />
                   Watch Demo
